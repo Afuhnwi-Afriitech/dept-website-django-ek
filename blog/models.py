@@ -9,7 +9,7 @@ class Post(models.Model):
         'auth.User',
         on_delete=models.CASCADE
     )
-    bod = models.TextField()
+    body = models.TextField()
 
     def __str__(self):
         return self.title

@@ -8,24 +8,111 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="A basic webapp for the Computer Engineering Department of NAHPI.
 Web Programming II Assignment - Enjoy!!">
-        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Almendra">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aref+Ruqaa">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atma">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-        <link rel="stylesheet" href="assets/css/styles.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-        <link>
+    <!-- statics -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/smoothproducts.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Almendra">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aref+Ruqaa">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atma">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link>
     </head>
     <body>
-        {% block content %}
-        {% endblock content %}
+
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="font-family: 'Aref Ruqaa', serif;">
+            <div class="container"><a class="navbar-brand logo" href="#">COME Dept</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'features' %}">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'faq' %}">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about-us' %}">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a></li>
+                        {% if 'user_id' in request.session %}
+
+                        <li class="nav-item">
+
+                            <form method="POST" action="{% url 'logout' %}">
+                                <a type="submit" style=" border-color: #1c72b2; border-width: thin; color: #1c72b2; background-color: white; border-radius: 1px" class="btn btn-primary " role="button" href="{% url 'logout' %}">Profile</a>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+
+                            <form method="POST" action="{% url 'logout' %}">
+                                <a type="submit" style="color: white; background-color: #1c72b2; border-radius: 1px" class="btn btn-primary " role="button" href="{% url 'logout' %}">Logout</a>
+                            </form>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    {% block content %}
+        <!--
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="font-family: 'Aref Ruqaa', serif;">
+            <div class="container"><a class="navbar-brand logo" href="#">COME Dept</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        -->
+
+    {% endblock %}
+
+        <footer class="page-footer dark" style="font-family: 'Aref Ruqaa', serif;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h5>Get started</h5>
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'signup' %}">Sign up</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5>About us</h5>
+                        <ul>
+                            <li><a href="{% url 'features' %}">Department Info</a></li>
+                            <li><a href="{% url 'contact-us' %}">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5>Support</h5>
+                        <ul>
+                            <li><a href="{% url 'faq' %}">FAQ</a></li>
+                            <li><a href="{% url 'contact-us' %}">Help desk</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p style="font-size: 16px;">© 2021 Copyright Text</p>
+            </div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+        <script src="{% static 'js/script.min.js' %}"></script>
+        <script src="{% static 'js/smoothproducts.js' %}"></script>
+        <script src="{% static 'js/jquery.min.js' %}"></script>
     </body>
 </html>

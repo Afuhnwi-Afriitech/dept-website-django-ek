@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+<html>
+
+<body style="font-family: 'Almendra', cursive;">
+{% block content %}
+    <main class="page faq-page">
+        <section class="clean-block clean-faq dark">
+            <div class="container">
+                <div class="block-heading" style="padding-top: 16px; padding-bottom: 16px; margin: auto">
+                    <h2 class="text-info">Blog</h2>
+                </div>
+                <div class="block-heading" style="padding-top: 2px"><div class="blog-home3 py-5">
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-md-8 text-center">
+        <h3 class="my-3">Latest News and Blog</h3>
+        <h6 class="subtitle font-weight-normal">Latest gist on what is going on in the department</h6>
+      </div>
+      <!-- Column -->
+      <!-- Column -->
+    </div>
+    <div class="row mt-4">
+      <!-- Column -->
+      <div class="col-lg-6">
+        <div class="card border-0 mb-4">
+          <a href="#"><img class="card-img-top" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img4.jpg" alt="wrappixel kit"></a>
+          <div class="date-pos text-center text-white p-3 bg-success-gradiant">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
+          <h5 class="font-weight-medium mt-3"><a href="#" class="link text-decoration-none">Techonologies started to change Drastically</a></h5>
+          <p class="m-t-20">You can relay on our amazing features list and also our customer services will be great experience. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+      </div>
+      <!-- Column -->
+      <div class="col-lg-6">
+        <div class="row">
+          <!-- Column -->
+            {% for post in object_list %}
+
+          <div class="col-md-12">
+            <div class="card border-0 mb-4" style="padding-bottom: 32px">
+                <h2 class="font-weight-medium mt-3"><a href="{% url 'blog_post' post.pk%}">{{ post.title }}</a> </h2>
+                <p class="font-weight-medium mt-3">{{ post.body }}</p>
+            </div>
+          </div>
+            {% endfor %}
+          <!-- Column -->
+        </div>
+      </div>
+      <!-- Column -->
+    </div>
+  </div>
+</div></div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+</body>
+
+</html>

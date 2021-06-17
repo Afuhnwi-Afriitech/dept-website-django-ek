@@ -4,19 +4,22 @@
     font-size: 64px;
   }
 }
-
+/*
+@media(min-width: 768px) {
+  .index-first {
+    margin-top: -200px;
+  }
+}
+*/
 .clean-block.clean-hero {
-  background-image: url("../../assets/img/tech/image4.jpg");
+  background-image: url("../img/tech/image4.jpg");
   color: rgba(9, 162, 255, 0.85);
   height: 100%;
 }
-
+/*
 body {
   height: 100%;
-}
-
-.vision {
-}
+}*/
 
 .block-heading.mode-of-admission-sec {
   padding-top: 8px;
@@ -24,16 +27,16 @@ body {
 }
 
 .sub-features {
-  font-family: 'Almendra';
+  font-family: 'Almendra', serif;
   font-size: 24px;
 }
 
 .heads-card-title {
-  font-family: 'Almendra';
+  font-family: 'Almendra', cursive;
 }
 
 .card-text.heads-card-par {
-  font-family: 'Aref Ruqaa';
+  font-family: 'Aref Ruqaa', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -95,18 +98,8 @@ ul {
 @media (min-width: 768px) {
   .welcome-head {
     font-size: 96px;
-    font-family: 'Almendra';
+    font-family: 'Almendra', fantasy;
   }
-}
-
-.text.welcome-text {
-}
-
-.clean-block.clean-hero.hero-section {
-  height: 50%;
-}
-
-.block-heading.admission-req {
 }
 
 @media (min-width: 768px) {
@@ -172,7 +165,7 @@ ul {
 
 @media (min-width: 992px) {
   body {
-    font-family: 'Almendra';
+    font-family: 'Almendra', fantasy;
     font-size: 18px;
   }
 }
@@ -196,7 +189,7 @@ ul {
 
 @media (min-width: 300px) {
   body {
-    font-family: 'Atma';
+    font-family: 'Atma', cursive;
   }
 }
 

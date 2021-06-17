@@ -27,12 +27,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'django-insecure-zt^wfr)nc&r9wej41l-4jsn^h!zq@+ju3&y-n!8f$uv@jy^97-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
 
 # Application definition
+EMAIL_HOST = 'localhost'
 
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',

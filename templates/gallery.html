@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<html>
+
+<body>
+
+    {% block content %}
+
+    <main class="page catalog-page">
+        <section class="clean-block clean-catalog dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info page-intro-title">Gallery</h2>
+                    <p class="page-intro-greeting">Some photos of students in the department</p>
+                </div>
+                <div class="repeat">
+                    <div class="row flex-box flex-wrap-wrap">
+                        <div class="col-sm-4 card-img flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Nature" href="{% static 'img/dept/dept1.jpeg' %}"><img class="img-fluid" src="{% static 'img/dept/dept1.jpeg' %}"></a></div>
+                        <div class="col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Technology" href="{% static 'img/dept/dept2.jpeg'  %}"><img class="img-fluid" src="{% static 'img/dept/dept2.jpeg' %}"></a></div>
+                        <div class="col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Travel" href="{% static 'img/dept/dept3.jpeg'  %}"><img class="img-fluid" src="{% static 'img/dept/dept3.jpeg' %}"></a></div>
+                        <div class="col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Food" href="{% static 'img/dept/dept4.jpeg'  %}"><img class="img-fluid" src="{% static 'img/dept/dept4.jpeg' %}"></a></div>
+                        <div class="col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Music" href="{% static 'img/dept/dept5.jpeg'  %}"><img class="img-fluid" src="{% static 'img/dept/dept5.jpeg' %}"></a></div>
+                        <div class="col-sm-4 flex-box flex-justify-center flex-align-center"><a class="fancybox" rel="gallery1" title="Hero Image Photography" href="{% static 'img/dept/dept6.jpeg'  %}"><img class="img-fluid" src="{% static 'img/dept/dept6.jpeg' %}"></a></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    {% endblock %}
+</body>
+
+</html>

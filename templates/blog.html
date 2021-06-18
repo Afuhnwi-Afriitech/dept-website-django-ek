@@ -39,7 +39,9 @@
 
           <div class="col-md-12">
             <div class="card border-0 mb-4" style="padding-bottom: 32px">
-                <h2 class="font-weight-medium mt-3"><a href="{% url 'blog_post' post.pk%}">{{ post.title }}</a> </h2>
+                <h2 class="font-weight-medium mt-3">{{ post.title }} </h2>
+                <br>
+                <a href="{% url 'blog_post' post.pk%}" type="button" role="button" class="btn btn-primary active welcome-bt">Open</a>
                 <p class="font-weight-medium mt-3">{{ post.body }}</p>
             </div>
           </div>

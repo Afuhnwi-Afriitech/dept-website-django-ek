@@ -142,3 +142,7 @@ prod_db = dj_database_url.config()
 DATABASES['default'].update(prod_db)
 
 django_heroku.settings(locals())
+
+DJANGO_NOTIFICATIONS_CONFIG = {
+    'USE_JSONFIELD' : True
+}

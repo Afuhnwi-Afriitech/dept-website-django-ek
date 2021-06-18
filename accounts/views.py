@@ -23,6 +23,7 @@ def signup(request):
         return render(request, 'registration.html')
 
 
+'''
 def login(request):
     if request.method == 'POST':
         user = auth.authenticate(
@@ -31,6 +32,26 @@ def login(request):
         )
 
         if user is not None:
+            auth.login(request, user)
+            request.session['user_id'] = user
+            return redirect('index')
+        else:
+            return render(request, 'login.html', {
+                'error': 'Username or password is incorrect'
+            })
+    else:
+        return render(request, 'login.html')
+'''
+
+
+def login(request):
+    if request.method == 'POST':
+        user = auth.authenticate(
+            username=request.POST.get('username'),
+            password=request.POST.get('password')
+        )
+
+        if user is None:
             auth.login(request, user)
             request.session['user_id'] = user
             return redirect('index')

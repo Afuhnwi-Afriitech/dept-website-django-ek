@@ -53,7 +53,7 @@ def login(request):
 
         if user is None:
             auth.login(request, user)
-            request.session['user_id'] = user
+            # request.session['user_id'] = user
             return redirect('index')
         else:
             return render(request, 'login.html', {

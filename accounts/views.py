@@ -30,7 +30,7 @@ def login(request):
             password=request.POST.get('password')
         )
 
-        if user is None:
+        if user is not None:
             auth.login(request, user)
             request.session['user_id'] = user
             return redirect('index')

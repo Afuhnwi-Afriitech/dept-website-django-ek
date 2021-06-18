@@ -135,6 +135,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 import dj_database_url
+import django_heroku
+
 
 prod_db = dj_database_url.config()
 DATABASES['default'].update(prod_db)
+
+django_heroku.settings(locals())

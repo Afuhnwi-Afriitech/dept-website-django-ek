@@ -4,7 +4,7 @@ Second semester project for COME3201 - Web Programming
 For all participants of group 2, create an issue on this repo with the title "{your name}" and put any dummy content you wish to put.
 Follow this so I can add you to the contributor's list.
 
-Contact: [Phone](tel:237672270627)
+Contact: [Phone](237672270627)
 
 ### Contributors
  - Elroy Ankelmbom Kimbi Yonghabichia : [elroykanye](https://github.com/elroykanye)
